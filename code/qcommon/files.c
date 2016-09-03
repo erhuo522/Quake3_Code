@@ -196,7 +196,7 @@ or configs will never get loaded from disk!
 
 */
 
-#define	DEMOGAME			"demota"
+#define	DEMOGAME			"demoq3"
 
 // every time a new demo pk3 file is built, this checksum must be updated.
 // the easiest way to get it is to just run the game and see what it spits out
@@ -2836,8 +2836,9 @@ if the full version is not found
 ===================
 */
 static void FS_SetRestrictions( void ) {
+	
 	searchpath_t	*path;
-
+	/*
 #ifndef PRE_RELEASE_DEMO
 	char	*productId;
 
@@ -2884,7 +2885,7 @@ static void FS_SetRestrictions( void ) {
 				Com_Error( ERR_FATAL, "Corrupted pak0.pk3: %u", path->pack->checksum );
 			}
 		}
-	}
+	}*/
 }
 
 /*
@@ -3260,10 +3261,11 @@ void FS_InitFilesystem( void ) {
 	// if we can't find default.cfg, assume that the paths are
 	// busted and error out now, rather than getting an unreadable
 	// graphics screen when the font fails to load
-	if ( FS_ReadFile( "default.cfg", NULL ) <= 0 ) {
+	/*if ( FS_ReadFile( "default.cfg", NULL ) <= 0 ) {
 		Com_Error( ERR_FATAL, "Couldn't load default.cfg" );
 		// bk001208 - SafeMode see below, FIXME?
 	}
+	*/
 
 	Q_strncpyz(lastValidBase, fs_basepath->string, sizeof(lastValidBase));
 	Q_strncpyz(lastValidGame, fs_gamedirvar->string, sizeof(lastValidGame));
@@ -3297,7 +3299,7 @@ void FS_Restart( int checksumFeed ) {
 	// if we can't find default.cfg, assume that the paths are
 	// busted and error out now, rather than getting an unreadable
 	// graphics screen when the font fails to load
-	if ( FS_ReadFile( "default.cfg", NULL ) <= 0 ) {
+	/*if ( FS_ReadFile( "default.cfg", NULL ) <= 0 ) {
 		// this might happen when connecting to a pure server not using BASEGAME/pak0.pk3
 		// (for instance a TA demo server)
 		if (lastValidBase[0]) {
@@ -3313,7 +3315,7 @@ void FS_Restart( int checksumFeed ) {
 		}
 		Com_Error( ERR_FATAL, "Couldn't load default.cfg" );
 	}
-
+	*/
 	// bk010116 - new check before safeMode
 	if ( Q_stricmp(fs_gamedirvar->string, lastValidGame) ) {
 		// skip the q3config.cfg if "safe" is on the command line
