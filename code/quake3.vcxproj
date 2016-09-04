@@ -98,7 +98,7 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">.\Release_TA\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">.\Release_TA\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release TA|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\Quake3_Win32\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release TA DEMO|Win32'">.\quake3___Win32_Release_TA_DEMO\</OutDir>
